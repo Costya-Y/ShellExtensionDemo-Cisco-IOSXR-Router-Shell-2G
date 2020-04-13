@@ -1,3 +1,8 @@
+# Extension Demo
+* This official shell was forked from [here](https://github.com/QualiSystems/Cisco-IOSXR-Router-Shell-2G)
+* load_firmware method was extended to allow for parametrization between "flash" and "disk" storage
+
+===== Original Documentation Below =====
 # **Cisco IOS-XR Router 2G Shell**
 
 [![Build status](https://travis-ci.org/QualiSystems/Cisco-IOSXR-Router-Shell-2G.svg?branch=dev)](https://travis-ci.org/QualiSystems/Cisco-IOSXR-Router-Shell-2G)
