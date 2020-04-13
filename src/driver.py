@@ -275,7 +275,7 @@ class CiscoIOSXRResourceDriver(ResourceDriverInterface, NetworkingResourceDriver
         logger.info('Orchestration restore completed')
 
     @GlobalLock.lock
-    def load_firmware(self, context, path, features_to_install="", vrf_management_name=None):
+    def load_firmware(self, context, path, features_to_install="", vrf_management_name=None, file_system=None):
         """Upload and updates firmware on the resource
 
         :param ResourceCommandContext context: ResourceCommandContext object with all Resource Attributes inside
@@ -299,7 +299,8 @@ class CiscoIOSXRResourceDriver(ResourceDriverInterface, NetworkingResourceDriver
         logger.info('Start Load Firmware')
         firmware_operations = FirmwareRunner(cli_handler=cli_handler,
                                              logger=logger,
-                                             features_to_install=features_to_install)
+                                             features_to_install=features_to_install,
+                                             file_system=file_system)
         response = firmware_operations.load_firmware(path=path,
                                                      vrf_management_name=vrf_management_name)
         logger.info('Finish Load Firmware: {}'.format(response))
