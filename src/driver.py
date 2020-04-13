@@ -12,8 +12,15 @@ from cloudshell.devices.driver_helper import parse_custom_commands
 from cloudshell.networking.cisco.snmp.cisco_snmp_handler import CiscoSnmpHandler as SNMPHandler
 from cloudshell.networking.cisco.runners.cisco_autoload_runner import \
     CiscoAutoloadRunner as AutoloadRunner
+
+# Original Imported Firmware Runner
+'''
 from cloudshell.networking.cisco.iosxr.runners.cisco_iosxr_firmware_runner import \
     CiscoIOSXRFirmwareRunner as FirmwareRunner
+'''
+
+# Custom Firmware Runner with same alias as original IOSXRFirmwareRunner
+from custom_load_firmware_runner import CustomFirmwareRunner as FirmwareRunner
 
 from cloudshell.devices.runners.run_command_runner import RunCommandRunner as CommandRunner
 from cloudshell.devices.runners.state_runner import StateRunner as StateRunner
