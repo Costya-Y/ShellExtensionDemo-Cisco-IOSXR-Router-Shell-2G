@@ -5,12 +5,12 @@ from cloudshell.networking.cisco.iosxr.runners.cisco_iosxr_firmware_runner impor
 class CustomCiscoIOSXRLoadFirmwareFlow(CiscoIOSXRLoadFirmwareFlow):
     def __init__(self, cli_handler, logger, packages_to_install, file_system=None):
         # Override init, pass file_system into into the CiscoLoadFirmwareFlow grandparent class"""
-        super(CiscoIOSXRLoadFirmwareFlow, self).__init__(cli_handler, logger, packages_to_install)
+        super(CustomCiscoIOSXRLoadFirmwareFlow, self).__init__(cli_handler, logger, packages_to_install)
         self._file_system = file_system
 
     def execute_flow(self, path, vrf, timeout):
         # Copy and make all required changes from the base class, or call method from parent class:
-        # super(CiscoIOSXRLoadFirmwareFlow, self).execute_flow(path, vrf, timeout)
+        # super(CustomCiscoIOSXRLoadFirmwareFlow, self).execute_flow(path, vrf, timeout)
         pass
 
 
